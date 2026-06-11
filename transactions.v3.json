@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0.0",
+  "content_version": 3,
+  "generated_at": "2026-06-11",
+  "global_disclaimer_ar": "الرسوم تقريبية وقابلة للتغيير حسب المحافظة والسرعة والإضافات — تأكد من القيمة النهائية عند الدفع على البوابة الرسمية.",
+  "global_disclaimer_en": "Fees are approximate and change by governorate/speed/add-ons — confirm the final amount at payment on the official portal.",
+  "transactions": [
+    {
+      "id": "national_id",
+      "name_ar": "بطاقة الرقم القومي",
+      "name_en": "National ID",
+      "authority": "Interior",
+      "category": "Identity",
+      "icon": "person.text.rectangle.fill",
+      "summary_ar": "استخراج أو تجديد أو بدل فاقد لبطاقة الرقم القومي — متاح أونلاين بالكامل.",
+      "variants": [
+        {"id":"new","name_ar":"أول مرة","name_en":"New","extra_documents":[]},
+        {"id":"renew","name_ar":"تجديد","name_en":"Renew","extra_documents":[]},
+        {"id":"lost","name_ar":"بدل فاقد","name_en":"Lost","extra_documents":[
+          {"id":"police_report","label_ar":"محضر شرطة بالفقد","label_en":"Police report (lost)","required":true}
+        ]}
+      ],
+      "documents": [
+        {"id":"birth_cert","label_ar":"شهادة الميلاد","label_en":"Birth certificate","required":true},
+        {"id":"residence_proof","label_ar":"إثبات محل الإقامة (فاتورة مرافق)","label_en":"Proof of residence (utility bill)","required":true},
+        {"id":"profession_proof","label_ar":"إثبات المهنة (مختوم)","label_en":"Proof of profession (stamped)","required":true}
+      ],
+      "fees": [
+        {"label_ar":"أونلاين (إصدار جديد)","label_en":"Online (new)","amount_egp":175,"speed":"ordinary"},
+        {"label_ar":"عادي حضوري","label_en":"In-person ordinary","amount_egp":50,"speed":"ordinary"},
+        {"label_ar":"مستعجل","label_en":"Urgent","amount_egp":175,"speed":"urgent"},
+        {"label_ar":"فوري (نفس اليوم)","label_en":"Same-day","amount_egp":315,"speed":"sameday"},
+        {"label_ar":"مميز","label_en":"Premium","amount_egp":800,"speed":"premium"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://digital.gov.eg",
+      "portal_label_ar": "افعلها على بوابة مصر الرقمية",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"ادخل بوابة مصر الرقمية","channel":"online"},
+        {"order":2,"title_ar":"اختر الخدمة والنوع وارفع المستندات","channel":"online"},
+        {"order":3,"title_ar":"ادفع الرسوم","channel":"online"},
+        {"order":4,"title_ar":"استلم عبر البريد","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"warning","text_ar":"مواصفات الصورة الشخصية دقيقة."},
+        {"severity":"warning","text_ar":"أول استخراج قد يتطلب بصمة عشرية حضوريًا."}
+      ],
+      "dependencies": [],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://digital.gov.eg"]
+    },
+    {
+      "id": "passport",
+      "name_ar": "جواز سفر",
+      "name_en": "Passport",
+      "authority": "Interior",
+      "category": "Travel",
+      "icon": "airplane",
+      "summary_ar": "إصدار أو تجديد جواز سفر — متاح أونلاين وقد يلزم الحضور للبصمة.",
+      "variants": [
+        {"id":"new","name_ar":"إصدار جديد","name_en":"New","extra_documents":[]},
+        {"id":"renew","name_ar":"تجديد","name_en":"Renew","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"id_qual","label_ar":"بطاقة الرقم القومي (والمؤهل مسجل بها)","label_en":"National ID (with qualification recorded)","required":true},
+        {"id":"photos","label_ar":"4 صور 4×6 خلفية بيضاء","label_en":"4 photos 4×6 white bg","required":true},
+        {"id":"qual_cert","label_ar":"شهادة المؤهل","label_en":"Qualification certificate","required":true},
+        {"id":"military_status","label_ar":"شهادة الموقف من التجنيد (للذكور)","label_en":"Military status (males)","required":true,"note_ar":"للذكور 18–40"}
+      ],
+      "fees": [
+        {"label_ar":"عادي","label_en":"Ordinary","amount_egp":1110,"speed":"ordinary"},
+        {"label_ar":"مستعجل","label_en":"Urgent","amount_egp":1300,"speed":"urgent"},
+        {"label_ar":"فوري","label_en":"Instant","amount_egp":1600,"speed":"instant"},
+        {"label_ar":"توصيل سريع","label_en":"Fast delivery","amount_egp":150,"speed":"na"}
+      ],
+      "online_status": "partial",
+      "portal_url": "https://www.moi.gov.eg",
+      "portal_label_ar": "افعلها على بوابة الداخلية",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"تأكد من تسجيل المؤهل بالبطاقة","channel":"inperson"},
+        {"order":2,"title_ar":"قدّم الطلب أونلاين","channel":"online"},
+        {"order":3,"title_ar":"احضر للبصمة إن لزم وادفع","channel":"inperson"},
+        {"order":4,"title_ar":"استلم الجواز","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"critical","text_ar":"عدم تسجيل المؤهل في البطاقة هو سبب الرفض الأول."},
+        {"severity":"warning","text_ar":"الموقف من التجنيد مطلوب للذكور 18–40."}
+      ],
+      "dependencies": [
+        {"type":"requires_qualification_on_id","blocks":true,"text_ar":"يجب تسجيل المؤهل في بطاقتك أولاً."},
+        {"type":"requires_military_status","blocks":false,"text_ar":"للذكور 18–40: استخرج شهادة الموقف من التجنيد أولاً.","related_transaction":"military_service"}
+      ],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://www.moi.gov.eg"]
+    },
+    {
+      "id": "drivers_license",
+      "name_ar": "رخصة قيادة",
+      "name_en": "Driver's License",
+      "authority": "Interior",
+      "category": "Vehicle",
+      "icon": "car.fill",
+      "summary_ar": "إصدار أو تجديد رخصة القيادة — التجديد جزئيًا أونلاين والإصدار الجديد حضوري (اختبار + كشف طبي).",
+      "variants": [
+        {"id":"renew","name_ar":"تجديد","name_en":"Renew","extra_documents":[]},
+        {"id":"new","name_ar":"إصدار جديد","name_en":"New","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"id_copies","label_ar":"بطاقة الرقم القومي + صور","label_en":"National ID + copies","required":true},
+        {"id":"photos","label_ar":"3 صور شخصية","label_en":"3 photos","required":true},
+        {"id":"old_license","label_ar":"الرخصة القديمة","label_en":"Old license","required":true},
+        {"id":"medical","label_ar":"كشف طبي حكومي (نظر) مختوم","label_en":"Govt medical (eyesight) stamped","required":true},
+        {"id":"fines_clearance","label_ar":"براءة ذمة من المخالفات","label_en":"Fines clearance","required":true}
+      ],
+      "fees": [
+        {"label_ar":"ضريبة التأمين","label_en":"Insurance tax","amount_egp":615,"speed":"na"},
+        {"label_ar":"شهادة المخالفات","label_en":"Violations cert","amount_egp":50,"speed":"na"},
+        {"label_ar":"الكشف الطبي","label_en":"Medical","amount_egp":300,"speed":"na"},
+        {"label_ar":"النماذج","label_en":"Forms","amount_egp":125,"speed":"na"}
+      ],
+      "online_status": "partial",
+      "portal_url": "https://traffic.moi.gov.eg",
+      "portal_label_ar": "افعلها على بوابة المرور",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"اسدد المخالفات","channel":"online"},
+        {"order":2,"title_ar":"اعمل الكشف الطبي","channel":"inperson"},
+        {"order":3,"title_ar":"جدّد أونلاين (للتجديد) أو احضر للاختبار (جديد)","channel":"online"},
+        {"order":4,"title_ar":"استلم الرخصة","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"critical","text_ar":"يجب سداد المخالفات أولًا."},
+        {"severity":"warning","text_ar":"الكشف الطبي بوابة إلزامية."}
+      ],
+      "dependencies": [
+        {"type":"requires_no_fines","blocks":true,"text_ar":"امسح مخالفاتك أولاً — المخالفات غير المدفوعة تمنع التجديد.","related_transaction":"traffic_violations"}
+      ],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://traffic.moi.gov.eg"]
+    },
+    {
+      "id": "vehicle_license",
+      "name_ar": "رخصة تسيير",
+      "name_en": "Vehicle License",
+      "authority": "Interior",
+      "category": "Vehicle",
+      "icon": "car.2.fill",
+      "summary_ar": "تجديد رخصة تسيير المركبة — متاح أونلاين في السنوات بدون فحص فني.",
+      "variants": [
+        {"id":"renew","name_ar":"تجديد","name_en":"Renew","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"renew_form","label_ar":"نموذج التجديد","label_en":"Renewal form","required":true},
+        {"id":"license","label_ar":"رخصة التسيير","label_en":"Vehicle license","required":true},
+        {"id":"id","label_ar":"بطاقة الرقم القومي","label_en":"National ID","required":true},
+        {"id":"fines_clearance","label_ar":"براءة ذمة مخالفات","label_en":"Fines clearance","required":true},
+        {"id":"insurance","label_ar":"وثيقة التأمين الإجباري","label_en":"Mandatory insurance doc","required":true},
+        {"id":"inspection","label_ar":"الفحص الفني (كل 3 سنوات)","label_en":"Technical inspection (every 3 yrs)","required":false}
+      ],
+      "fees": [
+        {"label_ar":"حتى 1000 سي سي","label_en":"≤1000cc","amount_egp":225,"speed":"na"},
+        {"label_ar":"1001–1300 سي سي","label_en":"1001–1300cc","amount_egp":255,"speed":"na"},
+        {"label_ar":"1301–1600 سي سي","label_en":"1301–1600cc","amount_egp":290,"speed":"na"}
+      ],
+      "online_status": "partial",
+      "portal_url": "https://traffic.moi.gov.eg",
+      "portal_label_ar": "افعلها على بوابة المرور",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"اسدد المخالفات وجهّز التأمين","channel":"online"},
+        {"order":2,"title_ar":"سنة الفحص: احضر للفحص الفني","channel":"inperson"},
+        {"order":3,"title_ar":"جدّد أونلاين","channel":"online"},
+        {"order":4,"title_ar":"استلم الرخصة","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"warning","text_ar":"سنة الفحص الفني تستلزم الحضور."},
+        {"severity":"critical","text_ar":"اسدد المخالفات وجهّز التأمين أولًا."}
+      ],
+      "dependencies": [
+        {"type":"requires_no_fines","blocks":true,"text_ar":"امسح مخالفاتك أولاً — المخالفات غير المدفوعة تمنع التجديد.","related_transaction":"traffic_violations"},
+        {"type":"requires_inspection","blocks":false,"text_ar":"كل 3 سنوات: سنة الفحص الفني تستلزم الحضور."}
+      ],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://traffic.moi.gov.eg"]
+    },
+    {
+      "id": "birth_certificate",
+      "name_ar": "شهادة ميلاد مميكنة",
+      "name_en": "Computerized Birth Certificate",
+      "authority": "Interior",
+      "category": "Civil",
+      "icon": "doc.text.fill",
+      "summary_ar": "استخراج شهادة ميلاد مميكنة — أونلاين بالكامل وعبر ماكينات السجل المدني.",
+      "variants": [
+        {"id":"issue","name_ar":"استخراج","name_en":"Issue","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"parents_ids","label_ar":"بطاقتا الوالدين","label_en":"Parents' IDs","required":true},
+        {"id":"applicant_id","label_ar":"بطاقة مقدم الطلب","label_en":"Applicant ID","required":true,"note_ar":"لتحديد البيانات"}
+      ],
+      "fees": [
+        {"label_ar":"الرسوم","label_en":"Fee","amount_egp":45,"amount_egp_max":63,"speed":"na","note_ar":"+ توصيل"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://digital.gov.eg",
+      "portal_label_ar": "افعلها على بوابة مصر الرقمية",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري أو ماكينات السجل المدني"},
+      "steps": [
+        {"order":1,"title_ar":"ادخل البوابة وأدخل بيانات الرقم القومي","channel":"online"},
+        {"order":2,"title_ar":"ادفع الرسوم","channel":"online"},
+        {"order":3,"title_ar":"استلم بريديًا أو من الماكينة","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"warning","text_ar":"السجل الورقي القديم قد يستلزم الحضور أول مرة."},
+        {"severity":"warning","text_ar":"أي اختلاف في البيانات يوقف الإصدار."}
+      ],
+      "dependencies": [],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://digital.gov.eg"]
+    },
+    {
+      "id": "criminal_record",
+      "name_ar": "صحيفة الحالة الجنائية (فيش وتشبيه)",
+      "name_en": "Criminal Status Certificate",
+      "authority": "Interior",
+      "category": "Legal",
+      "icon": "checkmark.shield.fill",
+      "summary_ar": "استخراج صحيفة الحالة الجنائية (فيش وتشبيه) — أونلاين، وتُسلَّم لصاحبها فقط.",
+      "variants": [
+        {"id":"ordinary","name_ar":"عادي","name_en":"Ordinary","extra_documents":[]},
+        {"id":"urgent","name_ar":"مستعجل","name_en":"Urgent","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"own_id","label_ar":"بطاقة الرقم القومي","label_en":"National ID","required":true,"note_ar":"يطلبها صاحبها بنفسه"}
+      ],
+      "fees": [
+        {"label_ar":"عادي","label_en":"Ordinary","amount_egp":70,"speed":"ordinary"},
+        {"label_ar":"مستعجل","label_en":"Urgent","amount_egp":100,"speed":"urgent"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://digital.gov.eg",
+      "portal_label_ar": "افعلها على بوابة مصر الرقمية",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري لصاحب الشأن فقط"},
+      "steps": [
+        {"order":1,"title_ar":"ادخل البوابة واطلب الصحيفة برقمك القومي","channel":"online"},
+        {"order":2,"title_ar":"ادفع الرسوم","channel":"online"},
+        {"order":3,"title_ar":"استلم بريديًا","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"warning","text_ar":"يلزم وجود بصمات عشرية مسجلة مسبقًا، وإلا تحضر شخصيًا أول مرة."}
+      ],
+      "dependencies": [
+        {"type":"requires_prior_fingerprints","blocks":false,"text_ar":"يلزم وجود بصمات عشرية مسجلة مسبقًا، وإلا تحضر شخصيًا أول مرة."}
+      ],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://digital.gov.eg"]
+    },
+    {
+      "id": "marriage_divorce",
+      "name_ar": "وثيقة زواج/طلاق",
+      "name_en": "Marriage/Divorce Certificate",
+      "authority": "Interior",
+      "category": "Civil",
+      "icon": "heart.text.square.fill",
+      "summary_ar": "استخراج مستخرج وثيقة زواج أو طلاق — أونلاين (نسخ؛ الأصل يتم عند المأذون/محكمة الأسرة).",
+      "variants": [
+        {"id":"marriage","name_ar":"زواج","name_en":"Marriage","extra_documents":[]},
+        {"id":"divorce","name_ar":"طلاق","name_en":"Divorce","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"names","label_ar":"الاسم الكامل للطرفين","label_en":"Both parties' full names","required":true},
+        {"id":"ids","label_ar":"الرقم القومي للطرفين","label_en":"Both parties' IDs","required":true},
+        {"id":"event_date","label_ar":"تاريخ الواقعة","label_en":"Event date","required":true}
+      ],
+      "fees": [
+        {"label_ar":"الرسوم","label_en":"Fee","amount_egp":75,"speed":"na","note_ar":"شاملة التوصيل"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://digital.gov.eg",
+      "portal_label_ar": "افعلها على بوابة مصر الرقمية",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"ادخل البوابة وأدخل بيانات الطرفين وتاريخ الواقعة","channel":"online"},
+        {"order":2,"title_ar":"ادفع الرسوم","channel":"online"},
+        {"order":3,"title_ar":"استلم النسخة","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"info","text_ar":"التسجيل ليس مثل طباعة نسخة."},
+        {"severity":"warning","text_ar":"اختلاف البيانات يوقف الإصدار."}
+      ],
+      "dependencies": [],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://digital.gov.eg"]
+    },
+    {
+      "id": "real_estate",
+      "name_ar": "الشهر العقاري",
+      "name_en": "Real-estate Registration",
+      "authority": "Justice",
+      "category": "RealEstate",
+      "icon": "house.fill",
+      "summary_ar": "تسجيل عقاري — معظمه حضوري مع حجز مواعيد أونلاين. إصلاحات 2024–25 سريعة التغيّر.",
+      "variants": [
+        {"id":"register","name_ar":"تسجيل","name_en":"Register","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"prelim_contract","label_ar":"العقد الابتدائي الأصلي","label_en":"Original preliminary contract","required":true,"note_ar":"أصبح إلزاميًا"},
+        {"id":"chain_docs","label_ar":"مستندات التسلسل/الملكية","label_en":"Title/chain documents","required":true},
+        {"id":"survey","label_ar":"المساحة","label_en":"Survey","required":true},
+        {"id":"ids","label_ar":"البطاقات","label_en":"IDs","required":true},
+        {"id":"tax_clear","label_ar":"المخالصات الضريبية","label_en":"Tax clearances","required":true}
+      ],
+      "fees": [
+        {"label_ar":"حتى 100 م²","label_en":"≤100m²","amount_egp":1000,"speed":"na","note_ar":"شاملة مساحة ~175"},
+        {"label_ar":"الإجمالي حتى","label_en":"Total up to","amount_egp":4000,"speed":"na"}
+      ],
+      "online_status": "partial",
+      "portal_url": "https://www.moj.gov.eg",
+      "portal_label_ar": "احجز موعدًا",
+      "delivery": null,
+      "steps": [
+        {"order":1,"title_ar":"جهّز العقد الابتدائي والمستندات","channel":"inperson"},
+        {"order":2,"title_ar":"احجز موعدًا","channel":"online"},
+        {"order":3,"title_ar":"احضر للشهر وادفع الرسوم المقننة","channel":"inperson"}
+      ],
+      "gotchas": [
+        {"severity":"critical","text_ar":"إصلاحات 2024–25 سريعة التغيّر — تحقّق قبل أي خطوة."},
+        {"severity":"info","text_ar":"البائع يدفع ضريبة التصرف، والمشتري يدفع التسجيل."}
+      ],
+      "dependencies": [],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://www.moj.gov.eg"]
+    },
+    {
+      "id": "traffic_violations",
+      "name_ar": "مخالفات المرور",
+      "name_en": "Traffic Violations",
+      "authority": "Interior",
+      "category": "Vehicle",
+      "icon": "exclamationmark.triangle.fill",
+      "summary_ar": "الاستعلام عن المخالفات وسدادها — أونلاين بالكامل (بدون رسوم استعلام على القنوات الرسمية).",
+      "variants": [
+        {"id":"check","name_ar":"استعلام","name_en":"Check","extra_documents":[]},
+        {"id":"pay","name_ar":"سداد","name_en":"Pay","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"national_id","label_ar":"الرقم القومي","label_en":"National ID","required":true},
+        {"id":"plate_alt","label_ar":"أو رقم اللوحة + نوع الرخصة + المحافظة","label_en":"Or plate + license type + governorate","required":false}
+      ],
+      "fees": [
+        {"label_ar":"قيمة المخالفات","label_en":"Violation amounts","amount_egp":0,"speed":"na","note_ar":"لا رسوم استعلام على القنوات الرسمية؛ السداد عبر فوري/أمان/مصاري/بطاقات/محافظ"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://traffic.moi.gov.eg",
+      "portal_label_ar": "استعلم وادفع على بوابة المرور",
+      "delivery": null,
+      "steps": [
+        {"order":1,"title_ar":"أدخل الرقم القومي أو بيانات اللوحة","channel":"online"},
+        {"order":2,"title_ar":"استعرض المخالفات","channel":"online"},
+        {"order":3,"title_ar":"ادفع واحتفظ بالإيصال","channel":"online"}
+      ],
+      "gotchas": [
+        {"severity":"critical","text_ar":"المخالفات غير المدفوعة تمنع تجديد رخصة القيادة والتسيير."},
+        {"severity":"info","text_ar":"المخالفات الجديدة تستغرق وقتًا لتظهر."}
+      ],
+      "dependencies": [],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://traffic.moi.gov.eg", "https://ppo.gov.eg"]
+    },
+    {
+      "id": "military_service",
+      "name_ar": "الموقف من التجنيد",
+      "name_en": "Military Service Status",
+      "authority": "Defense",
+      "category": "Military",
+      "icon": "shield.lefthalf.filled",
+      "summary_ar": "شهادة الموقف من التجنيد — على بوابة التجنيد المنفصلة، وليست على بوابة مصر الرقمية.",
+      "variants": [
+        {"id":"issue","name_ar":"استخراج","name_en":"Issue","extra_documents":[]}
+      ],
+      "documents": [
+        {"id":"own_id","label_ar":"بطاقتك الشخصية","label_en":"Your ID","required":true},
+        {"id":"father_id","label_ar":"بطاقة الوالد","label_en":"Father's ID","required":true},
+        {"id":"gund6","label_ar":"كارت الـ6 جند","label_en":"6-gund card","required":true},
+        {"id":"family_reg","label_ar":"قيد العائلة","label_en":"Family registration","required":true}
+      ],
+      "fees": [
+        {"label_ar":"رسوم بسيطة عبر فوري","label_en":"Modest fee via Fawry","amount_egp":50,"speed":"na"}
+      ],
+      "online_status": "full",
+      "portal_url": "https://seglat.mod.gov.eg",
+      "portal_label_ar": "افعلها على بوابة التجنيد",
+      "delivery": {"provider":"EgyptPost","note_ar":"التوصيل عبر البريد المصري"},
+      "steps": [
+        {"order":1,"title_ar":"ادخل بوابة التجنيد","channel":"online"},
+        {"order":2,"title_ar":"أدخل بياناتك وادفع عبر فوري","channel":"online"},
+        {"order":3,"title_ar":"استلم الشهادة","channel":"delivery"}
+      ],
+      "gotchas": [
+        {"severity":"critical","text_ar":"ليست على بوابة مصر الرقمية — استخدم seglat.mod.gov.eg."},
+        {"severity":"warning","text_ar":"مطلوبة للذكور 18–40 للجواز والوظائف والسفر."},
+        {"severity":"info","text_ar":"نوع الموقف (مؤجل/أدى/إعفاء) يحدد الأهلية لخطوات لاحقة."}
+      ],
+      "dependencies": [
+        {"type":"external_portal","blocks":false,"text_ar":"تُنفَّذ على بوابة منفصلة (seglat.mod.gov.eg) وليست على بوابة مصر الرقمية."}
+      ],
+      "last_verified": "2026-06-11",
+      "source_urls": ["https://seglat.mod.gov.eg"]
+    }
+  ]
+}
